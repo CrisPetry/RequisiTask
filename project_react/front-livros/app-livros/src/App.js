@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import LivrosList from './LivrosList';
 import LivrosForm from './LivrosForm';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import LivrosSrv from './services/LivrosSrv.js';
-import PrimeReact from 'primereact/api';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -64,30 +62,46 @@ function App() {
   }
 
   const editar = (id) => {
-    setLivro(livros.filter((livro) => livro._id == id)[0]);
+    setLivro(livros.filter((livro) => livro._id === id)[0]);
     setEditando(true);
   }
 
   const excluir = (_id) => {
+    confirmDialog({
+      message: 'Excluir registro?',
+      header: 'Confirmação',
+      icon: 'pi pi-spin pi-spinner',
+      acceptLabel: 'Sim',
+      rejectLabel: 'Não',
+      acceptClassName: 'p-button-danger',
+      accept: () => excluirConfirm(_id)
+    });
+  }
+
+  const excluirConfirm = (_id) => {
     LivrosSrv.excluir(_id).then(response => {
       onClickAtualizar();
       toastRef.current.show({
         severity: 'success',
-        summary: "Excluído", life: 2000
+        summary: 'Excluído',
+        life: 2000
       });
     })
-
       .catch(e => {
         toastRef.current.show({
           severity: 'error',
-          summary: e.message, life: 4000
+          summary: e.message,
+          life: 4000
         });
       });
   }
 
+
+
   if (!editando) {
     return (
       <div className="App">
+        <ConfirmDialog />
         <Toast ref={toastRef} />
         <LivrosList livros={livros} onClickAtualizar={onClickAtualizar}
           inserir={inserir} editar={editar} excluir={excluir} />

@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.table>tbody{
+  vertical-align: auto;
+}
+
+.btn btn-primary btn-sm{
+  margin: 2px;
+}
