@@ -2,12 +2,12 @@
 
 
 #Obter lista de livros 
-GET http://localhost:3000/api/livros
+GET http://localhost:3001/api/livros
 Content-Type: application/json
 ###
 
 #Inserir novo livro
-POST http://localhost:3000/api/livros
+POST http://localhost:3001/api/livros
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 ###
 
 # Alterar livro
-PUT http://localhost:3000/api/livros
+PUT http://localhost:3001/api/livros
 Content-Type: application/json
 
 {
@@ -36,12 +36,12 @@ Content-Type: application/json
 
 
 # Excluir um livro
-DELETE http://localhost:3000/api/livros/62674037c84db1514f841114
+DELETE http://localhost:3001/api/livros/62674037c84db1514f841114
 Content-Type: application/json
 ###
 
 # Livro sem o autor
-POST http://localhost:3000/api/livros
+POST http://localhost:3001/api/livros
 Content-Type: application/json
 
 {
@@ -51,4 +51,13 @@ Content-Type: application/json
  "quantidade": 12,
  "precoUn": 25.95
 }
+###
+
+# Obter pelo id do livro
+GET http://localhost:3001/api/livros/5f6cb80e07cee54810920f5f
+Content-Type: application/json
+###
+# Obter livros filtrando
+GET http://localhost:3001/api/livros/filtro/coraline
+Content-Type: application/json
 ###

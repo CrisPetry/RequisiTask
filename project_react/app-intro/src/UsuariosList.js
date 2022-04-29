@@ -27,16 +27,16 @@ function UsuariosList(props) {
                     {props.usuarios.length > 0 ? (props.usuarios.map((o, index) => (
                         <tr key={index}>
                             <td>{index}</td>
-                            <td>{o.id}</td>
+                            <td>{o._id}</td>
                             <td>{o.nome}</td>
                             <td>{o.email}</td>
                             <td>{o.celular}</td>
                             <td>
 
-                                <button onClick={() => props.editar(o.id)} 
+                                <button onClick={() => props.editar(o._id)} 
                                 className="btn btn-primary btn-sm">Editar</button>
 
-                                <button onClick={() => props.excluir(o.id)}
+                                <button onClick={() => props.excluir(o._id)}
                                     className="btn btn-danger btn-sm">Excluir</button>
 
 

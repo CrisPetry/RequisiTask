@@ -5,7 +5,8 @@ const express = require('express');
 const app = express();
 app.use(express.json()); // para tratar json
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
+
 app.listen(port, () => {
     return console.log('API executando na porta ' + port);
 });

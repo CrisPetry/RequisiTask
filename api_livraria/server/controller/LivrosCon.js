@@ -27,6 +27,25 @@ module.exports = {
         });
     },
 
-    
+    obterPeloId: async (req, res) => {
+        Livros.findOne({ _id: req.params.id }, function (err, obj) {
+            if (err)
+                res.status(400).send(err);
+            res.status(200).json(obj);
+        });
+    },
+
+    filtrar: async (req, res) => {
+        Livros.find({
+            $or: [
+                { titulo: { $regex: req.params.filtro, $options: "i" } },
+            ],
+        }, function (err, objetos) {
+            if (err)
+                res.status(400).send(err);
+            res.json(objetos);
+        }).sort({ titulo: -1 });
+
+    },
 
 };
