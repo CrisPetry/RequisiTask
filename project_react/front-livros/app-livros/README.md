@@ -1,4 +1,4 @@
-##Projeto Desenvolvido por Cristian Guilherme Petry e Kétlin Petry Beppler##
+Projeto Desenvolvido por Cristian Guilherme Petry e Kétlin Petry Beppler
 
 api_livraria = api do trabalho 
 
