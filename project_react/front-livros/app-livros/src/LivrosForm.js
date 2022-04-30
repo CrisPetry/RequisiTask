@@ -9,15 +9,8 @@ const LivrosForm = (props) => {
         <form id="formulario">
             <body id="corpoForm">
 
-
-                <div class="form-group" id='id'>
-                    <label>ID</label>
-                    <input class="form-control" type="text" name="_id" readOnly
-                        value={props.livro._id} onChange={handleInputChange} />
-                </div>
-
                 <div class="form-group">
-                    <label>Titulo</label>
+                    <label>Título</label>
                     <input class="form-control" type="text" name="titulo"
                         value={props.livro.titulo} onChange={handleInputChange} />
                 </div>
@@ -47,9 +40,9 @@ const LivrosForm = (props) => {
                 </div>
 
                 <div class="form-group">
-                    <button type="button" onClick={props.salvar}
+                    <button type="button" id="salvar" onClick={props.salvar}
                         className="btn btn-success btn-sm">Salvar</button>
-                    <button type="button" onClick={props.cancelar}
+                    <button type="button" id="cancelar" onClick={props.cancelar}
                         className="btn btn-danger btn-sm">Cancelar</button>
                 </div>
             </body>

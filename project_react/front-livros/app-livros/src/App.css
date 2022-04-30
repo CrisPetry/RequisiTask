@@ -97,6 +97,7 @@ tbody tr:nth-child(odd) {
 
 input.form-control{
   text-align: center;
+  border: 0.2px solid black;
 }
 
 label{
@@ -104,9 +105,37 @@ label{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   margin-bottom: 10px;
+  text-decoration: underline;
 }
 
 div.form-group{
-  margin: 39px;
+  margin: 20px;
 }
+
+#corpoForm{
+    border: 1px solid black;
+    width: 360px;
+    height: 550px;
+    margin-top: auto;
+}
+
+#salvar{
+  margin: 5px ;
+}
+
+#formulario{
+  margin:35px;
+  background-image: url("books.png");
+  background-position-y: center;
+  background-position-x: 80%;
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+  
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+
+
+
 
