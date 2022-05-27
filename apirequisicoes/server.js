@@ -2,6 +2,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json()); // para tratar json
+
+
 // definir porta para a API de serviço
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
@@ -10,6 +12,8 @@ app.listen(port, () => {
 
 // usar o mongo
 require("./server/banco/mongo");
+
+
 // Usar as rotas
 const routes = require('./server/routes/index');
 app.use(routes);

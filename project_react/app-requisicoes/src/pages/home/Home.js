@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-
-function Home() {
-
-  return(
-     <div>
-         <h1>Bem vindo</h1>
-     </div>
-  );
-
+import React from 'react'
+const Home = () => {
+  return (
+    <div className='container'>
+      <h1>Home</h1>
+    </div>
+  )
 }
+
 export default Home;

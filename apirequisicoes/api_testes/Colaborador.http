@@ -1,44 +1,48 @@
-# Obter a lista de usuários
-GET http://localhost:3000/api/colaboradores
+@apiUrl = http://localhost:3000/api
+//{{apiUrl}}
+
+# Obter a lista de colaboradores
+GET {{apiUrl}}/colaboradores
 Content-Type: application/json
 ###
 
 # Inserir colaborador
-POST http://localhost:3000/api/colaboradores
+POST {{apiUrl}}/colaboradores
 Content-Type: application/json
 
 {
- "nome": "Pedro",
- "email": "pedro@upf.br",
+ "nome": "Edenilson",
+ "email": "edenilson@upf.br",
  "senha": "1234"
 }
 ###
 
 # Alterar colaborador
-PUT http://localhost:3000/api/colaboradores
+PUT {{apiUrl}}/colaboradores
 Content-Type: application/json
 
 {
- "_id": "6235427787f12f993a2b4353",
+ "_id": "6235473d9c76cac42e6a2888",
  "nome": "Jaqson alterado",
- "email": "jaqson@teste.com"
+ "email": "jaqson@teste.com",
+ "senha": "12344"
 }
 ###
 
 
 # Excluir um colaborador
-DELETE http://localhost:3000/api/colaboradores/6235427787f12f993a2b4353
+DELETE {{apiUrl}}/colaboradores/6235473d9c76cac42e6a2888
 Content-Type: application/json
 ###
 
 
 # Obter pelo id de colaborador
-GET http://localhost:3000/api/colaboradores/6235438bc80a510ddfa1de8b
+GET {{apiUrl}}/colaboradores/627efb76cefb8821507cf426
 Content-Type: application/json
 ###
 
 
 # Obter colaboradores filtrando
-GET http://localhost:3000/api/colaboradores/filtro/Pedro
+GET {{apiUrl}}/colaboradores/filtro/cristian
 Content-Type: application/json
 ###

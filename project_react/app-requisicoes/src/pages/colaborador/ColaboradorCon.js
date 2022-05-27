@@ -1,8 +1,9 @@
+import "../../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useRef } from "react";
 import ColaboradorList from "./ColaboradorList";
 import ColaboradorForm from "./ColaboradorForm";
-import ColaboradorSrv from "./ColaboradorSrv";
+import ColaboradorSrv from "../../ColaboradorSrv";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
@@ -24,13 +25,13 @@ function ColaboradorCon() {
 
   const onClickAtualizar = () => {
     ColaboradorSrv.listar().then((response) => {
-        setColaboradores(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Colaboradores Atualizados!",
-          life: 3000,
-        });
-      })
+      setColaboradores(response.data);
+      toastRef.current.show({
+        severity: "success",
+        summary: "Colaboradores Atualizados!",
+        life: 3000,
+      });
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -135,6 +136,8 @@ function ColaboradorCon() {
         <ConfirmDialog />
         <ColaboradorList
           colaboradores={colaboradores}
+          colaborador={colaborador}
+          setColaborador={setColaborador}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

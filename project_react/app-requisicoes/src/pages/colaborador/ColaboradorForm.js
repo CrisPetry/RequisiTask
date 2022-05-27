@@ -30,7 +30,7 @@ const ColaboradorForm = (props) => {
         <label>Senha</label>
         <input
           class="form-control"
-          type="text"
+          type="password"
           name="senha"
           value={props.colaborador.senha}
           onChange={handleInputChange}

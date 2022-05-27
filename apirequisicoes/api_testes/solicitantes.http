@@ -1,0 +1,45 @@
+@apiUrl = http://localhost:3000/api
+//{{apiUrl}}
+
+#Obter a lista de solicitantes 
+GET {{apiUrl}}/solicitantes
+Content-Type: application/json
+###
+
+#Inserir um novo solicitante
+POST {{apiUrl}}/solicitantes
+Content-Type: application/json
+
+{
+    "nome" : "Cristian", 
+    "email" : "cristianpetry@upf.br",
+    "senha" : "1234"
+}
+###
+
+#Alterar um solicitante 
+PUT {{apiUrl}}/solicitantes
+Content-Type: application/json
+
+{
+    "_id" : "6290d8706a354ae514549c81",
+    "nome" : "Bruno Chiot",
+    "email" : "bruno@upf.br",
+    "senha" : "4321"
+}
+###
+
+#Excluir solicitante 
+DELETE {{apiUrl}}/solicitantes/6290d82a6a354ae514549c79
+Content-Type: application/json
+###
+
+#Obter pelo id de solicitante
+GET {{apiUrl}}/solicitantes/6290d82a6a354ae514549c79
+Content-Type: application/json
+###
+
+#Obter solicitante pelo filtro
+GET {{apiUrl}}/solicitantes/filtro/cris
+Content-Type: application/json
+###

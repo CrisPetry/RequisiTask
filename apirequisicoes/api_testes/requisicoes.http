@@ -1,0 +1,52 @@
+@apiUrl = http://localhost:3000/api
+//{{apiUrl}}
+
+#Obter a lista de requisições 
+GET {{apiUrl}}/requisicoes
+Content-Type: application/json
+###
+
+#Inserir nova requisição
+POST {{apiUrl}}/requisicoes
+Content-Type: application/json
+
+{
+    "titulo" : "Requisição de Processamento",
+    "descricao" : "Fazendo teste",
+    "status" : "Em andamento",
+    "prazoAtendimento" : "2002-05-12",
+    "tipoRequisicao" : "6290d69b6a354ae514549c52",
+    "solicitante" : "6290d8706a354ae514549c81"
+}
+###
+
+#Alterar uma requisição 
+PUT {{apiUrl}}/requisicoes
+Content-Type: application/json
+
+{
+    "_id" : "6290d8936a354ae514549c88",
+    "titulo" : "Requisição de Processamento alterada",
+    "descricao" : "Concluído com sucesso o teste",
+    "status" : "Em andamento",
+    "status" : "2002-05-12",
+    "prazoAtendimento" : "2002-05-12",
+    "tipoRequisicao" : "6290d69b6a354ae514549c52",
+    "solicitante" : "6290d8706a354ae514549c81"
+}
+###
+
+#Excluir uma requisição 
+DELETE {{apiUrl}}/requisicoes/6290d8936a354ae514549c88
+Content-Type: application/json
+###
+
+#Obter pelo id da requisição 
+GET {{apiUrl}}/requisicoes/6290d8936a354ae514549c88
+Content-Type: application/json
+###
+
+#Obter requisição pelo filtro
+GET {{apiUrl}}/requisicoes/filtro/proces
+Content-Type: application/json
+###
