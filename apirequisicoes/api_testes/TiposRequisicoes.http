@@ -1,0 +1,49 @@
+@apiUrl = http://localhost:3000/api
+//{{apiUrl}}
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOTUxNDE3MDk0ZTM0YTNlYzRmZjciLCJub21lIjoiRWRlbmlsc29uIiwiaWF0IjoxNjU0ODg3Nzc0LCJleHAiOjE2NTQ4OTEzNzR9.jyakmD3yE_KjqmhAKf1mXam2rl7wdphOeDnzbifBqzM
+
+# Obter a lista de tipos de requisições
+GET {{apiUrl}}/tipoRequisicoes
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+###
+
+# Inserir novo tipo de requisição
+POST {{apiUrl}}/tipoRequisicoes
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "descricao": "Processamento"
+}
+###
+
+# Alterar tipo de requisição
+PUT {{apiUrl}}/tipoRequisicoes
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "6290d6d86a354ae514549c59",
+ "descricao": "Teste Mudado"
+}
+###
+
+# Excluir um tipo de requisição
+DELETE {{apiUrl}}/tipoRequisicoes/6290d6d86a354ae514549c59
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Obter pelo id de tipo de requisição
+GET {{apiUrl}}/tipoRequisicoes/6290d6d86a354ae514549c59
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Obter tipo de requisição filtrando
+GET {{apiUrl}}/tipoRequisicoes/filtro/Teste
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

@@ -1,45 +1,52 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOTUxNDE3MDk0ZTM0YTNlYzRmZjciLCJub21lIjoiRWRlbmlsc29uIiwiaWF0IjoxNjU0ODg3Nzc0LCJleHAiOjE2NTQ4OTEzNzR9.jyakmD3yE_KjqmhAKf1mXam2rl7wdphOeDnzbifBqzM
 
-#Obter a lista de solicitantes 
+# Obter a lista de solicitantes
 GET {{apiUrl}}/solicitantes
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
-#Inserir um novo solicitante
+# Inserir novo solicitante
 POST {{apiUrl}}/solicitantes
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
-    "nome" : "Cristian", 
-    "email" : "cristianpetry@upf.br",
-    "senha" : "1234"
+ "nome": "Enio Beppler", 
+ "email": "jbeppler64@yahoo.com.br",
+ "senha": "12345"
 }
 ###
 
-#Alterar um solicitante 
+# Alterar solicitante
 PUT {{apiUrl}}/solicitantes
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
-    "_id" : "6290d8706a354ae514549c81",
-    "nome" : "Bruno Chiot",
-    "email" : "bruno@upf.br",
-    "senha" : "4321"
+ "_id": "62a399cb17094e34a3ec502b",
+ "nome": "Pato Donald", 
+ "email": "donald@upf.br",
+ "senha": "1234"
 }
 ###
 
-#Excluir solicitante 
-DELETE {{apiUrl}}/solicitantes/6290d82a6a354ae514549c79
+# Excluir um solicitante
+DELETE {{apiUrl}}/solicitantes/62a39e8817094e34a3ec5076
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
-#Obter pelo id de solicitante
-GET {{apiUrl}}/solicitantes/6290d82a6a354ae514549c79
+# Obter pelo id de solicitante
+GET {{apiUrl}}/solicitantes/6290d8706a354ae514549c81
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
-#Obter solicitante pelo filtro
-GET {{apiUrl}}/solicitantes/filtro/cris
+# Obter solicitante filtrando
+GET {{apiUrl}}/solicitantes/filtro/soli
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###

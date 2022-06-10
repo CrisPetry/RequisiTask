@@ -15,6 +15,5 @@ const RequisicaoSchema = new mongoose.Schema({
         ref: "Solicitante",
         require: true,
     },
-
 });
 module.exports = mongoose.model("Requisicao", RequisicaoSchema);

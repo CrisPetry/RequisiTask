@@ -1,4 +1,4 @@
-const TipoRequisicao = require('../model/TipoRequisicaoSchema');
+const TipoRequisicao = require("../model/TipoRequisicaoSchema");
 
 module.exports = {
     listar: async (req, res) => {
@@ -23,7 +23,7 @@ module.exports = {
 
     excluir: async (req, res) => {
         TipoRequisicao.deleteOne({ _id: req.params.id }, function (err) {
-            err ? res.status(400).send(err) : res.status(200).json("TipoRequisicao deletado com sucesso!");
+            err ? res.status(400).send(err) : res.status(200).json("message:ok");
         });
     },
 
@@ -34,10 +34,13 @@ module.exports = {
     },
 
     filtrar: (req, res) => {
-        TipoRequisicao.find({
-            $or: [{ descricao: { $regex: req.params.filtro, $options: "i" } }],
-        }, function (err, obj) {
-            err ? res.status(400).send(err) : res.status(200).json(obj);
-        }).sort({ descricao: -1 }); // -1 decrescente 1 crescente
+        TipoRequisicao.find(
+            {
+                $or: [{ descricao: { $regex: req.params.filtro, $options: "i" } }],
+            },
+            function (err, obj) {
+                err ? res.status(400).send(err) : res.status(200).json(obj);
+            }
+        ).sort({ descricao: -1 }); // -1 decrescente 1 crescente
     },
 };

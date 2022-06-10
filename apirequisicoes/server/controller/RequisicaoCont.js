@@ -1,12 +1,12 @@
-const Requisicao = require('../model/RequisicaoSchema');
+const Requisicao = require("../model/RequisicaoSchema");
 
 module.exports = {
     listar: async (req, res) => {
         Requisicao.find((err, objetos) => {
             err ? res.status(400).send(err) : res.status(200).json(objetos);
         })
-            .populate('tipoRequisicao')
-            .populate('solicitante')
+            .populate("tipoRequisicao")
+            .populate("solicitante")
             .sort({ titulo: 1 }); // -1 decrescente 1 crescente
     },
 
@@ -26,7 +26,7 @@ module.exports = {
 
     excluir: async (req, res) => {
         Requisicao.deleteOne({ _id: req.params.id }, function (err) {
-            err ? res.status(400).send(err) : res.status(200).json("Requisicao deletada com sucesso!");
+            err ? res.status(400).send(err) : res.status(200).json("message:ok");
         });
     },
 
@@ -36,22 +36,23 @@ module.exports = {
         })
             .populate("tipoRequisicao")
             .populate("solicitante");
-
     },
 
     filtrar: (req, res) => {
-        Requisicao.find({
-            $or: [
-                { titulo: { $regex: req.params.filtro, $options: "i" } },
-                { descricao: { $regex: req.params.filtro, $options: "i" } },
-                { status: { $regex: req.params.filtro, $options: "i" } },
-            ],
-        }, function (err, obj) {
-            err ? res.status(400).send(err) : res.status(200).json(obj);
-        })
+        Requisicao.find(
+            {
+                $or: [
+                    { titulo: { $regex: req.params.filtro, $options: "i" } },
+                    { descricao: { $regex: req.params.filtro, $options: "i" } },
+                    { status: { $regex: req.params.filtro, $options: "i" } },
+                ],
+            },
+            function (err, obj) {
+                err ? res.status(400).send(err) : res.status(200).json(obj);
+            }
+        )
             .populate("tipoRequisicao")
             .populate("solicitante")
-            .sort({ nome: -1 }); // -1 decrescente 1 crescente
-
+            .sort({ titulo: -1 }); // -1 decrescente 1 crescente
     },
 };

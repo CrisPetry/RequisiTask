@@ -11,11 +11,10 @@ const AtividadeSchema = new mongoose.Schema({
         ref: "Requisicao",
         require: true,
     },
-    Colaborador: {
+    colaborador: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Colaborador",
         require: true,
     },
-
 });
 module.exports = mongoose.model("Atividade", AtividadeSchema);

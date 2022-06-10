@@ -1,0 +1,60 @@
+@apiUrl = http://localhost:3000/api
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOTUxNDE3MDk0ZTM0YTNlYzRmZjciLCJub21lIjoiRWRlbmlsc29uIiwiaWF0IjoxNjU0ODg3Nzc0LCJleHAiOjE2NTQ4OTEzNzR9.jyakmD3yE_KjqmhAKf1mXam2rl7wdphOeDnzbifBqzM
+
+#Autenticação de colaborador
+POST {{apiUrl}}/login
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "email" : "edenilson@upf.br",
+    "senha" : "1234"
+}
+###
+
+# Obter a lista de colaboradores
+GET {{apiUrl}}/colaboradores
+Content-Type: application/json
+###
+
+# Inserir colaborador
+POST {{apiUrl}}/colaboradores
+Content-Type: application/json
+
+{
+ "nome": "Cristian",
+ "email": "cristianpetry@upf.br",
+ "senha": "1234"
+}
+###
+
+
+# Alterar colaborador
+PUT {{apiUrl}}/colaboradores
+Content-Type: application/json
+
+{
+ "_id": "62917619ec4e3262085fb8be",
+ "nome": "Jaqson alterado",
+ "email": "jaqson@teste.com",
+ "senha": "12344"
+}
+###
+
+
+# Excluir um colaborador
+DELETE {{apiUrl}}/colaboradores/62a39ab917094e34a3ec5049
+Content-Type: application/json
+###
+
+
+# Obter pelo id de colaborador
+GET {{apiUrl}}/colaboradores/62a39ab917094e34a3ec5049
+Content-Type: application/json
+###
+
+
+# Obter colaboradores filtrando
+GET {{apiUrl}}/colaboradores/filtro/cristian
+Content-Type: application/json
+###

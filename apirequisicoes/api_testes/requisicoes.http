@@ -1,52 +1,59 @@
 @apiUrl = http://localhost:3000/api
+
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOTUxNDE3MDk0ZTM0YTNlYzRmZjciLCJub21lIjoiRWRlbmlsc29uIiwiaWF0IjoxNjU0ODg3Nzc0LCJleHAiOjE2NTQ4OTEzNzR9.jyakmD3yE_KjqmhAKf1mXam2rl7wdphOeDnzbifBqzM
 //{{apiUrl}}
 
-#Obter a lista de requisições 
+# Obter a lista de requisições
 GET {{apiUrl}}/requisicoes
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
-#Inserir nova requisição
+# Inserir nova requisição
 POST {{apiUrl}}/requisicoes
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
-    "titulo" : "Requisição de Processamento",
-    "descricao" : "Fazendo teste",
-    "status" : "Em andamento",
-    "prazoAtendimento" : "2002-05-12",
-    "tipoRequisicao" : "6290d69b6a354ae514549c52",
-    "solicitante" : "6290d8706a354ae514549c81"
+ "titulo": "Requisição de Processamento", 
+ "descricao": "Para processar meu teste!",
+ "status": "Em andamento",
+ "prazoAtendimento": "2002-05-12",
+ "tipoRequisicao": "62a3980717094e34a3ec5017",
+ "solicitante": "6290d8706a354ae514549c81"
 }
 ###
 
-#Alterar uma requisição 
+# Alterar requisição
 PUT {{apiUrl}}/requisicoes
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
-    "_id" : "6290d8936a354ae514549c88",
-    "titulo" : "Requisição de Processamento alterada",
-    "descricao" : "Concluído com sucesso o teste",
-    "status" : "Em andamento",
-    "status" : "2002-05-12",
-    "prazoAtendimento" : "2002-05-12",
-    "tipoRequisicao" : "6290d69b6a354ae514549c52",
-    "solicitante" : "6290d8706a354ae514549c81"
+ "_id": "62a3991317094e34a3ec5024",
+ "titulo": "Requisição de Processamento Mudada", 
+ "descricao": "Para processar meu teste!",
+ "status": "Em andamento",
+ "prazoAtendimento": "2002-05-12",
+ "tipoRequisicao": "62a3980717094e34a3ec5017",
+ "solicitante": "62a399cb17094e34a3ec502b"
 }
 ###
 
-#Excluir uma requisição 
-DELETE {{apiUrl}}/requisicoes/6290d8936a354ae514549c88
+# Excluir uma requisição
+DELETE {{apiUrl}}/requisicoes/62a3991317094e34a3ec5024
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
-#Obter pelo id da requisição 
+# Obter pelo id de requisição
 GET {{apiUrl}}/requisicoes/6290d8936a354ae514549c88
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
-#Obter requisição pelo filtro
-GET {{apiUrl}}/requisicoes/filtro/proces
+# Obter requisição filtrando
+GET {{apiUrl}}/requisicoes/filtro/andamento
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###

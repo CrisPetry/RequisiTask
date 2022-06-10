@@ -4,4 +4,5 @@ const SolicitanteSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     senha: String,
 });
+
 module.exports = mongoose.model("Solicitante", SolicitanteSchema);

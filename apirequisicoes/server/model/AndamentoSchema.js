@@ -8,11 +8,10 @@ const AndamentoSchema = new mongoose.Schema({
         ref: "Atividade",
         require: true,
     },
-    Colaborador: {
+    colaborador: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Colaborador",
         require: true,
     },
-
 });
 module.exports = mongoose.model("Andamento", AndamentoSchema);

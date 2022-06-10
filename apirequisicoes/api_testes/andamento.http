@@ -1,49 +1,49 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
 
-#Obter a lista de andamentos 
+# Obter a lista de andamentos
 GET {{apiUrl}}/andamentos
 Content-Type: application/json
 ###
 
-#Inserir novo andamento
+# Inserir novo andamento
 POST {{apiUrl}}/andamentos
 Content-Type: application/json
 
 {
-    "dataHora" : "2022-05-27",
-    "titulo" : "Testando andamento",
-    "descricao" : "Finalizar teste de andamento",
-    "atividade" : "6290d9456a354ae514549ca7",
-    "Colaborador" : "627efb76cefb8821507cf426"
+ "dataHora": "2022-03-27",
+ "titulo": "Andamento teste", 
+ "descricao": "Finalizar testes de andamento",
+ "atividade": "623f9cb7d34bd647e4c45930",
+ "colaborador": "623a733205a4286ab31c786c"
 }
 ###
 
-#Alterar um andamento
+# Alterar um andamento
 PUT {{apiUrl}}/andamentos
 Content-Type: application/json
 
 {
-    "_id" : "6290d96e6a354ae514549cac",
-    "dataHora" : "2022-05-27",
-    "titulo" : "Testando andamento",
-    "descricao" : "Finalizar teste de andamento para poder exclui-lo",
-    "atividade" : "6290d9456a354ae514549ca7",
-    "Colaborador" : "62904b1efe4e78c2bc17cc1e"
+ "_id": "623fa2f6050c92172ca99545",   
+ "dataHora": "2022-03-27",
+ "titulo": "Andamento teste para excluir", 
+ "descricao": "Finalizar testes de andamento",
+ "atividade": "623f9cb7d34bd647e4c45930",
+ "colaborador": "623a733205a4286ab31c786c"
 }
 ###
 
-#Excluir um andamento
-DELETE {{apiUrl}}/andamentos/6290d96e6a354ae514549cac
+# Excluir um andamento
+DELETE {{apiUrl}}/andamentos/623fa2bc050c92172ca9953d
 Content-Type: application/json
 ###
 
-#Obter pelo id do andamento
-GET {{apiUrl}}/andamentos/6290d96e6a354ae514549cac
+# Obter pelo id de andamento
+GET {{apiUrl}}/andamentos/623fa2bc050c92172ca9953d
 Content-Type: application/json
 ###
 
-#Obter pelo andamento filtrando
-GET {{apiUrl}}/andamentos/filtro/ando
+# Obter andamentos filtrando
+GET {{apiUrl}}/andamentos/filtro/ovo
 Content-Type: application/json
 ###
