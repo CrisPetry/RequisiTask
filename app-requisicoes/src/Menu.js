@@ -10,16 +10,17 @@ function Menu() {
       label: 'Home', icon: 'pi pi-home',
       command: () => { navigate("/") }
     },
-
     {
-      label: 'Colaboradores', icon: 'pi pi-id-users',
+      label: 'Colaboradores', icon: 'pi pi-id-card',
       command: () => { navigate("/colaborador") }
     },
-
-
     {
-      label: 'Sair', icon: 'pi pi-fw pi-power-off'
-    }
+      label: 'Sair', icon: 'pi pi-sign-out',
+      command: () => {
+        sessionStorage.setItem('token', '');
+      },
+      url: '/'
+    },
   ];
 
   return (<Menubar model={items} />)
