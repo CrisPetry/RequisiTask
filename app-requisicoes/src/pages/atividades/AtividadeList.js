@@ -6,33 +6,36 @@ import { Button } from 'primereact/button';
 const AtividadeList = (props) => {
     return (
         <div className="App">
-            <h4 className='Atividades'>Atividades</h4>
+            <h4 className='headerAtividade'>Atividades</h4>
 
             <p></p>
             <div className='BotoesAtividade'>
                 <Button label="Inserir" className="p-button-success" onClick={props.inserir} />
-                <Button label="Editar" className="p-button-warning" onClick={() => props.editar()} disabled={!props.atividade._id} />
-                <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()} disabled={!props.atividade._id} />
+                <Button label="Editar" className="p-button-warning" onClick={() => props.editar()}
+                    disabled={!props.atividade._id} />
+                <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()}
+                    disabled={!props.atividade._id} />
             </div>
             <p></p>
 
             <DataTable value={props.atividades} paginator responsiveLayout="scroll"
-                paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink 
-                LastPageLink RowsPerPageDropdown"
+                paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink 
+                RowsPerPageDropdown"
                 currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords}"
                 rows={5} rowsPerPageOptions={[5, 10, 50]}
-                emptyMessage="Nenhuma Atividade encontrada."
+                emptyMessage="Nenhuma atividade encontrada."
                 selectionMode="single" selection={props.atividade}
                 onSelectionChange={e => props.setAtividade(e.value)} dataKey="_id">
+
                 <Column field="_id" header="ID" sortable align={'center'}></Column>
-                <Column field="titulo" header="Título" align={'center'}></Column>
+                <Column field="titulo" header="Titulo" align={'center'}></Column>
                 <Column field="descricao" header="Descrição" align={'center'}></Column>
-                <Column field="status" header="Status" align={'center'}></Column>
+                <Column field="status" header="Status" sortable align={'center'}></Column>
                 <Column field="prazo" header="Prazo" align={'center'}></Column>
-                <Column field="agendaInicio" header="Inicio" align={'center'}></Column>
-                <Column field="dataHoraTermino" header="Data/Término" align={'center'}></Column>
-                <Column field="colaborador.nome" header="Colaborador" align={'center'}></Column>
+                <Column field="agendaInicio" header="Data/Hora Início" align={'center'}></Column>
+                <Column field="dataHoraTermino" header="Data/Hora Fim" align={'center'}></Column>
                 <Column field="requisicao.descricao" header="Requisição" align={'center'}></Column>
+                <Column field='colaborador.nome' header="Colaborador" align={'center'}></Column>
             </DataTable>
         </div>
     );

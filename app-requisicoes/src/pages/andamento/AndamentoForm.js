@@ -85,7 +85,7 @@ const AndamentoForm = (props) => {
                             <label htmlFor="atividade">Atividade</label>
                             <Dropdown id="atividade" name="atividade" value={props.andamento.atividade}
                                 onChange={handleInputChange} options={atividades}
-                                optionLabel="descricao" optionValue="_id" placeholder="Selecione uma atividade" />
+                                optionLabel="titulo" optionValue="_id" placeholder="Selecione uma atividade" />
                             {errors.atividade && <span style={{ color: 'red' }}>{errors.atividade.message}</span>}
                         </div>
 

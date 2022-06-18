@@ -1,5 +1,5 @@
 import axios from "../../services/axios-common";
-class ColaboradorSrv {
+class AtividadeSrv {
     url = "/atividades";
     async listar() {
         return await axios.get(this.url).catch((err) => {
@@ -32,4 +32,4 @@ class ColaboradorSrv {
         });
     }
 }
-export default new ColaboradorSrv();
+export default new AtividadeSrv();

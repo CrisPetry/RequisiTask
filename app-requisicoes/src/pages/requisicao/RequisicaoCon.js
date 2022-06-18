@@ -3,25 +3,24 @@ import React, { useState, useEffect, useRef } from "react";
 import RequisicaoList from "./RequisicaoList";
 import RequisicaoForm from "./RequisicaoForm";
 import RequisicaoSrv from "./RequisicaoSrv";
-import SolicitanteSrv from '../solicitante/SolicitanteSrv';
-import TipoRequisicaoSrv from '../tipoRequisicoes/TipoRequisicaoSrv';
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 
 
+
 function RequisicaoCon() {
     const [requisicoes, setRequisicoes] = useState([]);
-    const initialState = { id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "", prazoAtendimento: "" };
+    const initialState = {
+        id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "",
+        prazoAtendimento: "", tipoRequisicao: null, solicitante: null
+    };
     const [requisicao, setRequisicao] = useState(initialState);
     const [editando, setEditando] = useState(false);
     const toastRef = useRef();
-    const [TipoRequisicao, setTipoRequisicao] = useState([]);
-    const [Solicitantes, setSolicitantes] = useState([]);
 
     useEffect(() => {
         onClickAtualizar();
-        onCLickAtualizarSolicitantes();
     }, []);
 
     const onClickAtualizar = () => {
@@ -37,22 +36,6 @@ function RequisicaoCon() {
                 });
             });
     };
-
-    const onCLickAtualizarSolicitantes = () => {
-        SolicitanteSrv.listar().then((response) => {
-            setSolicitantes(response.data);
-        })
-            .catch((e) => {
-                console.log("Erro: " + e.message);
-            });
-
-        TipoRequisicaoSrv.listar().then((response) => {
-            setTipoRequisicao(response.data);
-        })
-            .catch((e) => {
-                console.log("Erro: " + e.message);
-            });
-    }
 
     const inserir = () => {
         setRequisicao(initialState);
@@ -106,8 +89,6 @@ function RequisicaoCon() {
     const editar = () => {
         setEditando(true);
     };
-
-
 
     const excluir = () => {
         confirmDialog({
@@ -171,8 +152,6 @@ function RequisicaoCon() {
             </div>
         );
     }
-
-
 
 }
 export default RequisicaoCon;

@@ -29,7 +29,7 @@ const AndamentoList = (props) => {
                 <Column field="descricao" header="Descrição" sortable filter align={'center'}></Column>
                 <Column field="dataHora" header="Data/Hora" sortable filter align={'center'}></Column>
                 <Column field="colaborador.nome" header="Colaborador" align={'center'}></Column>
-                <Column field="atividade.descricao" header="Atividade" sortable filter align={'center'}></Column>
+                <Column field="atividade.titulo" header="Atividade" sortable filter align={'center'}></Column>
             </DataTable>
         </div>
     );

@@ -1,6 +1,6 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
-@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1MzA0NzcsImV4cCI6MTY1NTUzNDA3N30.wxoINEg-6mkNwuuD_bAsbGgrTmx0svJ_Jz0H6aNynUw
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1ODgxMDksImV4cCI6MTY1NTU5MTcwOX0.QMhGAeII2NkBSv-g47Akg1A1ythPGFKwE4r0rftUZEc
 
 # Obter a lista de solicitantes
 GET {{apiUrl}}/solicitantes

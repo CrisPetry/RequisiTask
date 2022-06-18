@@ -81,8 +81,8 @@
 
 .BotoesReq{
   justify-content: center !important;
-  margin-top: -48px;
-  margin-left: 59rem;
+  margin-top: -51px;
+  margin-left: 69rem;
 }
 
 .BotoesColaborador{
@@ -123,8 +123,15 @@
 
 .BotoesAtividade{
   justify-content: center !important;
-  margin-top: -51px;
+  margin-top: -61px;
   margin-left: 69rem;
+}
+
+.BotoesAtividadeForm{
+  justify-content: center !important;
+  margin-top: 24px;
+  margin-left: 58.8rem;
+  margin-bottom: 24px;
 }
 
 .BotoesFormAtividade{
@@ -155,6 +162,12 @@
   width: 45rem;
   margin-left:25rem;
   margin-top:3rem;
+}
+
+.cardAtividadeForm{
+  width: 45rem;
+  margin-left:25rem;
+  margin-top:0rem;
 }
 
 .p-button{
@@ -200,6 +213,10 @@ h4{
   font-size: xx-large;
 }
 
+.headerRequisicao{
+  margin-top: -15px;
+}
+
 .headerSoliForm{
   padding-top: 8px;
   margin-bottom: 25px;
@@ -208,6 +225,13 @@ h4{
 }
 
 .headerAndamento{
+  padding-top: 8px;
+  margin-bottom: 25px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.headerAtividade{
   padding-top: 8px;
   margin-bottom: 25px;
   font-family: 'Fredoka One', cursive;
@@ -236,6 +260,7 @@ h4{
 }
 
 
+/* TABELA STRIPES */
 
 .p-selectable-row:nth-child(even){
   background-color: #f8f9fa !important;

@@ -1,6 +1,6 @@
 @apiUrl = http://localhost:3000/api
 
-@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1Nzc0NTYsImV4cCI6MTY1NTU4MTA1Nn0.8vlTXzSccQnmp5Rs7ScVRd2ODX8vG_q35_DvVoXolpE
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1OTIwMDEsImV4cCI6MTY1NTU5NTYwMX0.QfrCZb3z-QUsKaqXtiIIgdbqk2ECKgIWemuUF5IAmsA
 //{{apiUrl}}
 
 # Obter a lista de requisições
@@ -15,12 +15,12 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Requisição de Processamento", 
- "descricao": "Para processar meu teste!",
- "status": "Em andamento",
+ "titulo": "Reparo", 
+ "descricao": "Reparo impressora",
+ "status": "Aberto",
  "prazoAtendimento": "2002-05-12",
- "tipoRequisicao": "62a3980717094e34a3ec5017",
- "solicitante": "6290d8706a354ae514549c81"
+ "tipoRequisicao": "62ad44de0a8abe53b083fe51",
+ "solicitante": "62a39eeb17094e34a3ec507e"
 }
 ###
 

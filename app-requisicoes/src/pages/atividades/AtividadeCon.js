@@ -6,25 +6,26 @@ import AtividadeSrv from "./AtividadeSrv";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
+
+
+
 function AtividadeCon() {
     const [atividades, setAtividades] = useState([]);
-    const initialState = { id: null, titulo: "", descricao: "", status: "", prazo: "", agendaInicio: "", dataHoraTermino: "", requisicao: null, colaborador: null };
+    const initialState = {
+        id: null, titulo: "", descricao: "", status: "", prazo: "",
+        agendaInicio: "", dataHoraTermino: "", requisicao: null, colaborador: null
+    };
     const [atividade, setAtividade] = useState(initialState);
     const [editando, setEditando] = useState(false);
     const toastRef = useRef();
 
     useEffect(() => {
-        onClickAtualizar(); // ao inicializar execula método para atualizar
+        onClickAtualizar();
     }, []);
 
     const onClickAtualizar = () => {
         AtividadeSrv.listar().then((response) => {
             setAtividades(response.data);
-            // toastRef.current.show({
-            //   severity: "success",
-            //   summary: "Atividades Atualizadas!",
-            //   life: 3000,
-            // });
         })
             .catch((e) => {
                 console.log("Erro: " + e.message);
@@ -42,7 +43,7 @@ function AtividadeCon() {
     };
 
     const salvar = () => {
-        if (atividade._id == null) { // inclusão
+        if (atividade._id == null) {
             AtividadeSrv.incluir(atividade)
                 .then((response) => {
                     setEditando(false);
@@ -60,7 +61,7 @@ function AtividadeCon() {
                         life: 4000,
                     });
                 });
-        } else { // alteração
+        } else {
             AtividadeSrv.alterar(atividade)
                 .then((response) => {
                     setEditando(false);
@@ -92,11 +93,12 @@ function AtividadeCon() {
     const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
-            header: "Confirmação",
-            icon: "pi pi-question",
+            closable: false,
+            icon: "pi pi-trash",
             acceptLabel: "Sim",
             rejectLabel: "Não",
-            acceptClassName: "p-button-danger",
+            rejectClassName: "p-button-danger",
+            acceptClassName: "p-button-success",
             accept: () => excluirConfirm(),
         });
     };
@@ -144,8 +146,7 @@ function AtividadeCon() {
                     atividade={atividade}
                     setAtividade={setAtividade}
                     salvar={salvar}
-                    cancelar={cancelar}
-                />
+                    cancelar={cancelar} />
                 <Toast ref={toastRef} />
             </div>
         );

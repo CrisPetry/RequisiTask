@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext'
 import { useForm } from 'react-hook-form';
+import SolicitanteSrv from '../solicitante/SolicitanteSrv';
+import TipoRequisicaoSrv from '../tipoRequisicoes/TipoRequisicaoSrv';
+
+
 const RequisicaoForm = (props) => {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -16,15 +20,36 @@ const RequisicaoForm = (props) => {
         { label: 'Cancelado', value: 'Cancelado' }
     ];
 
-    const tipoRequisicaoSelectItems = [
+    const [solicitantes, setSolicitantes] = useState([]);
+    const [tipoRequisicoes, setTipoRequisicoes] = useState([]);
 
-    ];
+    useEffect(() => {
+        onClickAtualizar();
+    }, []);
+
+    const onClickAtualizar = () => {
+        SolicitanteSrv.listar().then((response) => {
+            setSolicitantes(response.data);
+        })
+            .catch((e) => {
+                console.log("Erro: " + e.message);
+            });
+
+        TipoRequisicaoSrv.listar().then((response) => {
+            setTipoRequisicoes(response.data);
+        })
+            .catch((e) => {
+                console.log("Erro: " + e.message);
+            });
+    }
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         props.salvar();
     }
+
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
@@ -67,14 +92,19 @@ const RequisicaoForm = (props) => {
                         </div>
 
                         <div className="field col-12 md:col-4">
-                            <label htmlFor="tipoRequisicoes">Tipo Requisição</label>
-                            <Dropdown name="tipoRequisicoes" value={props.requisicao.tipoRequisicoes}
-                                options={tipoRequisicaoSelectItems}
-                                {...register("tipoRequisicoes", {
-                                    required: { value: false, message: "O status é obrigatória." }
-                                })}
-                                onChange={handleInputChange} />
-                            {errors.tipoRequisicoes && <span style={{ color: 'red' }}>{errors.tipoRequisicoes.message}</span>}
+                            <label htmlFor="solicitante">Solicitante</label>
+                            <Dropdown id="solicitante" name="solicitante" value={props.requisicao.solicitante}
+                                onChange={handleInputChange} options={solicitantes}
+                                optionLabel="nome" optionValue="_id" placeholder="Selecione um solicitante" />
+                            {errors.solicitante && <span style={{ color: 'red' }}>{errors.solicitante.message}</span>}
+                        </div>
+
+                        <div className="field col-12 md:col-4">
+                            <label htmlFor="tipoRequisicao">Tipo de Requisição</label>
+                            <Dropdown id="tipoRequisicao" name="tipoRequisicao" value={props.requisicao.tipoRequisicao}
+                                onChange={handleInputChange} options={tipoRequisicoes}
+                                optionLabel="descricao" optionValue="_id" placeholder="Selecione um tipo de requisição" />
+                            {errors.tipoRequisicao && <span style={{ color: 'red' }}>{errors.tipoRequisicao.message}</span>}
                         </div>
 
                         <div className="field col-6 md:col-4">
@@ -91,6 +121,7 @@ const RequisicaoForm = (props) => {
                         <div className="field col-6 md:col-4">
                             <label htmlFor="prazoAtendimento">Prazo</label>
                             <Calendar name="prazoAtendimento" value={props.requisicao.prazoAtendimento}
+                                dateFormat="dd/mm/yy"
                                 {...register("prazoAtendimento", {
                                     required: { value: false, message: "O Prazo Atendimento é obrigatório." }
                                 })}

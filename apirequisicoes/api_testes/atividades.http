@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:3000/api
-@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1MzA0NzcsImV4cCI6MTY1NTUzNDA3N30.wxoINEg-6mkNwuuD_bAsbGgrTmx0svJ_Jz0H6aNynUw
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1OTIwMDEsImV4cCI6MTY1NTU5NTYwMX0.QfrCZb3z-QUsKaqXtiIIgdbqk2ECKgIWemuUF5IAmsA
 //{{apiUrl}}
 
 # Obter a lista de atividades
@@ -14,14 +14,14 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Atividade teste", 
- "descricao": "Codificar métodos para API de Atividades! Funcionou tudo!",
- "status": "Concluído",
- "prazo": "2002-05-12",
- "agendaInicio": "2022-03-26",
- "dataHoraTermino": "2022-03-27",
- "requisicao": "623a74cc05a4286ab31c7881",
- "colaborador": "62904b1efe4e78c2bc17cc1e"
+ "titulo": "Reparo Epson", 
+ "descricao": "Conserto realizado na impressora!",
+ "status": "Em Andamento",
+ "prazo": "2002-06-28",
+ "agendaInicio": "2022-06-18",
+ "dataHoraTermino": "2022-06-28",
+ "requisicao": "62ae49ad80ef3537bcfa8e11",
+ "colaborador": "62a3a54017094e34a3ec5084"
 }
 ###
 
