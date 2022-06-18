@@ -61,6 +61,12 @@
   border: none;
 }
 
+.cardAndamentoForm{
+  width: 45rem;
+  margin-left:25rem;
+  margin-top:3rem;
+}
+
 .BotoesForm{
   justify-content: center !important;
   margin-top: 10px;
@@ -103,6 +109,30 @@
   margin-left: 59rem;
 }
 
+.BotoesAndamentoForm{
+  justify-content: center !important;
+  margin-top: 0px;
+  margin-left: 58.8rem;
+}
+
+.BotoesAndamento{
+  justify-content: center !important;
+  margin-top: -51px;
+  margin-left: 62rem;
+}
+
+.BotoesAtividade{
+  justify-content: center !important;
+  margin-top: -51px;
+  margin-left: 67rem;
+}
+
+.BotoesFormAtividade{
+  justify-content: center !important;
+  margin-top: 13px;
+  margin-left: 35.3rem;
+}
+
 .cardReqForm{
   width: 45rem;
   margin-left:25rem;
@@ -113,6 +143,12 @@
   width: 45rem;
   margin-left:25rem;
   margin-top:3rem;
+}
+
+.cardAtividadeForm{
+  width: 45rem;
+  margin-left:25rem;
+  margin-top:6rem;
 }
 
 .cardColabForm{
@@ -144,6 +180,12 @@ h4{
   font-size: xx-large;
 }
 
+.Atividades{
+  padding-top: 8px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
 .headerColab{
   padding-top: 8px;
   margin-bottom: 25px;
@@ -151,7 +193,28 @@ h4{
   font-size: xx-large;
 }
 
+.headerAndamento{
+  padding-top: 8px;
+  margin-bottom: 12px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
 .headerSoliForm{
+  padding-top: 8px;
+  margin-bottom: 25px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.headerAndamento{
+  padding-top: 8px;
+  margin-bottom: 25px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.headerAtividades{
   padding-top: 8px;
   margin-bottom: 25px;
   font-family: 'Fredoka One', cursive;
@@ -186,5 +249,50 @@ h4{
   display: block !important;
 }
 
+/* LOGIN */
 
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 12.5px 12.5px, linear-gradient(#444cf7 1px, transparent 1px) 0 -0.5px, linear-gradient(90deg, #444cf7 1px, #e5e5f7 1px) -0.5px 0;
+  background-size: 25px 25px, 25px 25px, 12.5px 12.5px, 12.5px 12.5px;
+}
+
+.Auth-form {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  text-align: center;
+  margin-left: 8rem;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+
+#entrar{
+  margin-left: 17.5rem !important;
+}
 

@@ -67,19 +67,20 @@ const RequisicaoForm = (props) => {
                         </div>
 
                         <div className="field col-12 md:col-4">
-                            <label htmlFor="tipoRequisicao">Tipo Requisição</label>
-                            <Dropdown name="tipoRequisicao" value={props.requisicao.tipoRequisicao} options={tipoRequisicaoSelectItems} placeholder="Selecionar Tipo de requisição"
-                                {...register("tipoRequisicao", {
+                            <label htmlFor="tipoRequisicoes">Tipo Requisição</label>
+                            <Dropdown name="tipoRequisicoes" value={props.requisicao.tipoRequisicoes}
+                                options={tipoRequisicaoSelectItems}
+                                {...register("tipoRequisicoes", {
                                     required: { value: false, message: "O status é obrigatória." }
                                 })}
                                 onChange={handleInputChange} />
-                            {errors.tipoRequisicao && <span style={{ color: 'red' }}>{errors.tipoRequisicao.message}</span>}
+                            {errors.tipoRequisicoes && <span style={{ color: 'red' }}>{errors.tipoRequisicoes.message}</span>}
                         </div>
 
                         <div className="field col-6 md:col-4">
                             <label htmlFor="dataHoraCriada">Data/Hora</label>
                             <Calendar name="dataHoraCriada" value={props.requisicao.dataHoraCriada}
-                                dateFormat="dd/mm/yy" placeholder="Informe a Data"
+                                dateFormat="dd/mm/yy"
                                 {...register("dataHoraCriada", {
                                     required: { value: false, message: "A  Data/Hora é obrigatória." }
                                 })}
@@ -89,7 +90,7 @@ const RequisicaoForm = (props) => {
 
                         <div className="field col-6 md:col-4">
                             <label htmlFor="prazoAtendimento">Prazo</label>
-                            <Calendar name="prazoAtendimento" value={props.requisicao.prazoAtendimento} placeholder="Informe o  Prazo Atendimento"
+                            <Calendar name="prazoAtendimento" value={props.requisicao.prazoAtendimento}
                                 {...register("prazoAtendimento", {
                                     required: { value: false, message: "O Prazo Atendimento é obrigatório." }
                                 })}

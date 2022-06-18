@@ -14,17 +14,12 @@ function AndamentoCon() {
     const toastRef = useRef();
 
     useEffect(() => {
-        onClickAtualizar(); // ao inicializar execula método para atualizar
+        onClickAtualizar();
     }, []);
 
     const onClickAtualizar = () => {
         AndamentoSrv.listar().then((response) => {
             setAndamentos(response.data);
-            // toastRef.current.show({
-            //   severity: "success",
-            //   // summary: "Colaboradores Atualizados!",
-            //   life: 3000,
-            // });
         })
             .catch((e) => {
                 console.log("Erro: " + e.message);
@@ -42,7 +37,7 @@ function AndamentoCon() {
     };
 
     const salvar = () => {
-        if (andamento._id == null) { // inclusão
+        if (andamento._id == null) {
             AndamentoSrv.incluir(andamento)
                 .then((response) => {
                     setEditando(false);
@@ -60,7 +55,7 @@ function AndamentoCon() {
                         life: 4000,
                     });
                 });
-        } else { // alteração
+        } else {
             AndamentoSrv.alterar(andamento)
                 .then((response) => {
                     setEditando(false);
@@ -92,11 +87,12 @@ function AndamentoCon() {
     const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
-            header: "Confirmação",
-            icon: "pi pi-question",
+            closable: false,
+            icon: "pi pi-trash",
             acceptLabel: "Sim",
             rejectLabel: "Não",
-            acceptClassName: "p-button-danger",
+            rejectClassName: "p-button-danger",
+            acceptClassName: "p-button-success",
             accept: () => excluirConfirm(),
         });
     };

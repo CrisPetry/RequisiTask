@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { InputText } from 'primereact/inputtext';
-import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { useForm } from "react-hook-form";
 import { Toast } from "primereact/toast";
@@ -14,7 +13,7 @@ const LoginForm = (props) => {
         setCredenciais({ ...credenciais, [id]: value });
     };
     const toastRef = useRef();
-    const { register, handleSubmit, setError, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         LoginSrv.login(credenciais).then(response => {
@@ -33,14 +32,16 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Toast ref={toastRef} />
-            <div>
-                <div className="card" style={{ marginLeft: '40%', marginTop: '15%', width: '200px', textAlign: 'center', border: '1px solid', padding: '10px' }}>
-                    <h5>Login</h5>
-                    <div className="p-fluid grid formgrid">
-
-                        <div className="field col-12 md:col-4">
-                            <label htmlFor="email">Email</label>
-                            <InputText id="email" defaultValue={credenciais.email}
+            <div className="Auth-form-container">
+                <div className="Auth-form">
+                    <div className="Auth-form-content">
+                        <h4 className="Auth-form-title">Login</h4>
+                        <div className="form-group mt-3">
+                            <label htmlFor="email">E-mail</label>
+                            <InputText id="email" type={'email'}
+                                className="form-control mt-1"
+                                placeholder="Informe o e-mail"
+                                defaultValue={credenciais.email}
                                 {...register("email", {
                                     required: { value: true, message: "O email é obrigatório." },
                                     minLength: { value: 2, message: "O email deve ter pelo menos 2 caracteres." },
@@ -50,9 +51,11 @@ const LoginForm = (props) => {
                             {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
                         </div>
 
-                        <div className="field col-4 md:col-4">
+                        <div className="form-group mt-3">
                             <label htmlFor="senha">Senha</label>
-                            <InputText type={'password'} id="senha"
+                            <InputText type={'password'}
+                                id="senha" className="form-control mt-1"
+                                placeholder="Informe a senha"
                                 {...register("senha", {
                                     required: { value: true, message: "A senha é obrigatória." },
                                     minLength: { value: 4, message: "A senha deve ter pelo menos 4 caracteres." },
@@ -65,9 +68,10 @@ const LoginForm = (props) => {
                         </div>
                     </div>
 
-                    <Button label="Login" icon="pi pi-sign-in" type="submit"
-                        className="p-button-secondary p-button-text" />
-
+                    <div className="d-gap gap-1 mt-3">
+                        <Button label="Entrar" id="entrar" type="submit" icon="pi pi-sign-in"
+                            className="btn btn-primary"></Button>
+                    </div>
                 </div>
             </div>
         </form>

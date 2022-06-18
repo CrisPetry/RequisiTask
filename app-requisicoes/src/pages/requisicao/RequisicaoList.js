@@ -13,8 +13,10 @@ const RequisicaoList = (props) => {
             <p></p>
             <div className='BotoesList'>
                 <Button label="Inserir" className="p-button-success" onClick={props.inserir} />
-                <Button label="Editar" className="p-button-warning" onClick={() => props.editar()} disabled={!props.requisicao._id} />
-                <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()} disabled={!props.requisicao._id} />
+                <Button label="Editar" className="p-button-warning" onClick={() => props.editar()}
+                    disabled={!props.requisicao._id} />
+                <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()}
+                    disabled={!props.requisicao._id} />
             </div>
             <p></p>
 
@@ -34,6 +36,7 @@ const RequisicaoList = (props) => {
                 <Column field="status" header="Status" sortable filter align={'center'}></Column>
                 <Column field="dataHoraCriada" header="Data/Hora" sortable filter align={'center'}></Column>
                 <Column field="prazoAtendimento" header="Prazo" sortable filter align={'center'}></Column>
+                <Column field="tipoRequisicoes" header="Tipo" align={'center'}></Column>
             </DataTable>
         </div>
     );

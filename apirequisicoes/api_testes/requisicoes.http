@@ -1,6 +1,6 @@
 @apiUrl = http://localhost:3000/api
 
-@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1MzA0NzcsImV4cCI6MTY1NTUzNDA3N30.wxoINEg-6mkNwuuD_bAsbGgrTmx0svJ_Jz0H6aNynUw
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1Nzc0NTYsImV4cCI6MTY1NTU4MTA1Nn0.8vlTXzSccQnmp5Rs7ScVRd2ODX8vG_q35_DvVoXolpE
 //{{apiUrl}}
 
 # Obter a lista de requisições

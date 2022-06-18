@@ -6,14 +6,14 @@ import { Button } from 'primereact/button';
 const AndamentoList = (props) => {
     return (
         <div className="App">
-            <h4>Listagem de Andamento</h4>
+            <h4 className='headerAndamento'>Status de andamentos</h4>
 
             <p></p>
-
-            <Button label="Inserir" className="p-button-raised p-button-success p-button-text" onClick={props.inserir} />
-            <Button label="Editar" className="p-button-raised p-button-warning p-button-text" onClick={() => props.editar()} disabled={!props.andamento._id} />
-            <Button label="Excluir" className="p-button-raised p-button-danger p-button-text" onClick={() => props.excluir()} disabled={!props.andamento._id} />
-
+            <div className='BotoesAndamento'>
+                <Button label="Inserir" className="p-button-success" onClick={props.inserir} />
+                <Button label="Editar" className="p-button-warning" onClick={() => props.editar()} disabled={!props.andamento._id} />
+                <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()} disabled={!props.andamento._id} />
+            </div>
             <p></p>
 
             <DataTable value={props.andamentos} paginator responsiveLayout="scroll"
@@ -22,16 +22,15 @@ const AndamentoList = (props) => {
                 rows={5} rowsPerPageOptions={[5, 10, 50]}
                 emptyMessage="Nenhum andamento encontrado."
                 selectionMode="single" selection={props.andamento}
-                onSelectionChange={e => props.setAndamento(e.value)} dataKey="_id"
-            >
-                <Column field="_id" header="ID" sortable></Column>
-                <Column field="titulo" header="Titulo" sortable filter ></Column>
-                <Column field="descricao" header="Descrição" sortable filter ></Column>
-                <Column field="dataHora" header="Data Hora" sortable filter ></Column>
-                <Column field="colaborador.nome" header="Colaborador" sortable filter ></Column>
-                <Column field="atividade.descricao" header="Atividade" sortable filter ></Column>
-            </DataTable>
+                onSelectionChange={e => props.setAndamento(e.value)} dataKey="_id">
 
+                <Column field="_id" header="ID" sortable align={'center'}></Column>
+                <Column field="titulo" header="Titulo" sortable filter align={'center'}></Column>
+                <Column field="descricao" header="Descrição" sortable filter align={'center'}></Column>
+                <Column field="dataHora" header="Data/Hora" sortable filter align={'center'}></Column>
+                <Column field="colaborador.nome" header="Colaborador" align={'center'}></Column>
+                <Column field="atividade.descricao" header="Atividade" sortable filter align={'center'}></Column>
+            </DataTable>
         </div>
     );
 };

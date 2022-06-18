@@ -1,5 +1,6 @@
 import "./App.css";
 import "primereact/resources/themes/saga-blue/theme.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import React, { Suspense, lazy, useState, useEffect } from "react";

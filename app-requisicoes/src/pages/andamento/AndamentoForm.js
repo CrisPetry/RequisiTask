@@ -20,7 +20,7 @@ const AndamentoForm = (props) => {
     const [colaboradores, setColaboradores] = useState([]);
 
     useEffect(() => {
-        onClickAtualizar(); // ao inicializar execula método para atualizar
+        onClickAtualizar();
     }, []);
 
     const onClickAtualizar = () => {
@@ -42,8 +42,8 @@ const AndamentoForm = (props) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <div className="card">
-                    <h5>Cadastro de Andamentos</h5>
+                <div className="cardAndamentoForm">
+                    <h5 className="headerAndamento">Cadastrar/Editar Andamentos</h5>
                     <div className="p-fluid grid formgrid">
 
                         <div className="field col-12 md:col-4">
@@ -101,9 +101,9 @@ const AndamentoForm = (props) => {
                     <p></p>
                 </div>
 
-                <div className="container d-flex justify-content-center">
-                    <Button label="Salvar" className="p-button-raised p-button-success p-button-text" type="submit" />
-                    <Button label="Cancelar" className="p-button-raised p-button-danger p-button-text" onClick={props.cancelar} />
+                <div className="BotoesAndamentoForm">
+                    <Button label="Salvar" className="p-button-success" type="submit" />
+                    <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                 </div>
             </div>
 

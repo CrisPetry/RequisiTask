@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import RequisicaoList from "./RequisicaoList";
 import RequisicaoForm from "./RequisicaoForm";
 import RequisicaoSrv from "./RequisicaoSrv";
+import SolicitanteSrv from '../solicitante/SolicitanteSrv';
+import TipoRequisicaoSrv from '../tipoRequisicoes/TipoRequisicaoSrv';
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
@@ -14,9 +16,12 @@ function RequisicaoCon() {
     const [requisicao, setRequisicao] = useState(initialState);
     const [editando, setEditando] = useState(false);
     const toastRef = useRef();
+    const [TipoRequisicao, setTipoRequisicao] = useState([]);
+    const [Solicitantes, setSolicitantes] = useState([]);
 
     useEffect(() => {
         onClickAtualizar();
+        onCLickAtualizarSolicitantes();
     }, []);
 
     const onClickAtualizar = () => {
@@ -33,13 +38,29 @@ function RequisicaoCon() {
             });
     };
 
+    const onCLickAtualizarSolicitantes = () => {
+        SolicitanteSrv.listar().then((response) => {
+            setSolicitantes(response.data);
+        })
+            .catch((e) => {
+                console.log("Erro: " + e.message);
+            });
+
+        TipoRequisicaoSrv.listar().then((response) => {
+            setTipoRequisicao(response.data);
+        })
+            .catch((e) => {
+                console.log("Erro: " + e.message);
+            });
+    }
+
     const inserir = () => {
         setRequisicao(initialState);
         setEditando(true);
     };
 
     const salvar = () => {
-        if (requisicao._id == null) { // inclusão
+        if (requisicao._id == null) {
             RequisicaoSrv.incluir(requisicao)
                 .then((response) => {
                     setEditando(false);
@@ -91,7 +112,7 @@ function RequisicaoCon() {
     const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
-            closable:false,
+            closable: false,
             icon: "pi pi-trash",
             acceptLabel: "Sim",
             rejectLabel: "Não",
