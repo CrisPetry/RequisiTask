@@ -6,8 +6,6 @@ import ColaboradorSrv from "./ColaboradorSrv";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
-
-
 function ColaboradorCon() {
   const [colaboradores, setColaboradores] = useState([]);
   const initialState = { id: null, nome: "", email: "", senha: "" };
@@ -82,14 +80,11 @@ function ColaboradorCon() {
     setEditando(false);
   };
 
-  const editar = (id) => {
-    setColaborador(
-      colaboradores.filter((colaborador) => colaborador._id === id)[0]
-    );
+  const editar = () => {
     setEditando(true);
   };
 
-  const excluir = (_id) => {
+  const excluir = () => {
     confirmDialog({
       message: "Confirma a exclusão?",
       header: "Confirmação",
@@ -97,12 +92,12 @@ function ColaboradorCon() {
       acceptLabel: "Sim",
       rejectLabel: "Não",
       acceptClassName: "p-button-danger",
-      accept: () => excluirConfirm(_id),
+      accept: () => excluirConfirm(),
     });
   };
 
-  const excluirConfirm = (_id) => {
-    ColaboradorSrv.excluir(_id)
+  const excluirConfirm = () => {
+    ColaboradorSrv.excluir(colaborador._id)
       .then((response) => {
         onClickAtualizar();
         toastRef.current.show({

@@ -1,14 +1,17 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1MzA0NzcsImV4cCI6MTY1NTUzNDA3N30.wxoINEg-6mkNwuuD_bAsbGgrTmx0svJ_Jz0H6aNynUw
 
 # Obter a lista de andamentos
 GET {{apiUrl}}/andamentos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Inserir novo andamento
 POST {{apiUrl}}/andamentos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "dataHora": "2022-03-27",
@@ -22,20 +25,22 @@ Content-Type: application/json
 # Alterar um andamento
 PUT {{apiUrl}}/andamentos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
- "_id": "623fa2f6050c92172ca99545",   
+ "_id": "62ad39200a8abe53b083fe12",   
  "dataHora": "2022-03-27",
  "titulo": "Andamento teste para excluir", 
  "descricao": "Finalizar testes de andamento",
- "atividade": "623f9cb7d34bd647e4c45930",
- "colaborador": "623a733205a4286ab31c786c"
+ "atividade": "6290d9456a354ae514549ca7",
+ "colaborador": "62a3951417094e34a3ec4ff7"
 }
 ###
 
 # Excluir um andamento
-DELETE {{apiUrl}}/andamentos/623fa2bc050c92172ca9953d
+DELETE {{apiUrl}}/andamentos/6290d9f76a354ae514549cbf
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id de andamento

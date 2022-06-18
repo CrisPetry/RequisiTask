@@ -1,6 +1,6 @@
 @apiUrl = http://localhost:3000/api
 
-@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOTUxNDE3MDk0ZTM0YTNlYzRmZjciLCJub21lIjoiRWRlbmlsc29uIiwiaWF0IjoxNjU0ODg3Nzc0LCJleHAiOjE2NTQ4OTEzNzR9.jyakmD3yE_KjqmhAKf1mXam2rl7wdphOeDnzbifBqzM
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1MzA0NzcsImV4cCI6MTY1NTUzNDA3N30.wxoINEg-6mkNwuuD_bAsbGgrTmx0svJ_Jz0H6aNynUw
 //{{apiUrl}}
 
 # Obter a lista de requisições
@@ -47,7 +47,7 @@ x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id de requisição
-GET {{apiUrl}}/requisicoes/6290d8936a354ae514549c88
+GET {{apiUrl}}/requisicoes/62a39a3517094e34a3ec503e
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

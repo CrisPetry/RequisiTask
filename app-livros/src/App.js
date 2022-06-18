@@ -2,7 +2,6 @@ import './App.css';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import LivrosList from './LivrosList';
 import LivrosForm from './LivrosForm';
-import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useRef } from 'react';
 import LivrosSrv from './services/LivrosSrv.js';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';

@@ -12,7 +12,27 @@ function Menu() {
     },
     {
       label: 'Colaboradores', icon: 'pi pi-id-card',
-      command: () => { navigate("/colaborador") }
+      command: () => { navigate("/colaboradores") }
+    },
+    {
+      label: 'Atividades', icon: 'pi pi-id-card',
+      command: () => { navigate("/atividades") }
+    },
+    {
+      label: 'Solicitantes', icon: 'pi pi-id-card',
+      command: () => { navigate("/solicitantes") }
+    },
+    {
+      label: 'Andamentos', icon: 'pi pi-id-card',
+      command: () => { navigate("/andamentos") }
+    },
+    {
+      label: 'Tipos de Requisições', icon: 'pi pi-id-card',
+      command: () => { navigate("/tipoRequisicoes") }
+    },
+    {
+      label: 'Requisições', icon: 'pi pi-id-card',
+      command: () => { navigate("/requisicoes") }
     },
     {
       label: 'Sair', icon: 'pi pi-sign-out',

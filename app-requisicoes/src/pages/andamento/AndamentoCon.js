@@ -6,11 +6,9 @@ import AndamentoSrv from "./AndamentoSrv";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
-
-
 function AndamentoCon() {
     const [andamentos, setAndamentos] = useState([]);
-    const initialState = { id: null, dataHora: "", titulo: "", descricao: "" };
+    const initialState = { id: null, dataHora: "", titulo: "", descricao: "", colaborador: null, atividade: null };
     const [andamento, setAndamento] = useState(initialState);
     const [editando, setEditando] = useState(false);
     const toastRef = useRef();
@@ -22,6 +20,11 @@ function AndamentoCon() {
     const onClickAtualizar = () => {
         AndamentoSrv.listar().then((response) => {
             setAndamentos(response.data);
+            // toastRef.current.show({
+            //   severity: "success",
+            //   // summary: "Colaboradores Atualizados!",
+            //   life: 3000,
+            // });
         })
             .catch((e) => {
                 console.log("Erro: " + e.message);
@@ -82,14 +85,11 @@ function AndamentoCon() {
         setEditando(false);
     };
 
-    const editar = (id) => {
-        setAndamento(
-            andamentos.filter((andamento) => andamento._id === id)[0]
-        );
+    const editar = () => {
         setEditando(true);
     };
 
-    const excluir = (_id) => {
+    const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
             header: "Confirmação",
@@ -97,12 +97,12 @@ function AndamentoCon() {
             acceptLabel: "Sim",
             rejectLabel: "Não",
             acceptClassName: "p-button-danger",
-            accept: () => excluirConfirm(_id),
+            accept: () => excluirConfirm(),
         });
     };
 
-    const excluirConfirm = (_id) => {
-        AndamentoSrv.excluir(_id)
+    const excluirConfirm = () => {
+        AndamentoSrv.excluir(andamento._id)
             .then((response) => {
                 onClickAtualizar();
                 toastRef.current.show({
