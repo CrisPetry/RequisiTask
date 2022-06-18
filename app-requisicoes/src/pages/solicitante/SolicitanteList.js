@@ -6,31 +6,30 @@ import { Button } from 'primereact/button';
 const SolicitanteList = (props) => {
     return (
         <div className="App">
-            <h4>Listagem de Solicitantes </h4>
+            <h4 className='Solicitante'>Solicitantes</h4>
 
             <p></p>
 
-            <Button label="Inserir" className="p-button-raised p-button-success p-button-text" onClick={props.inserir} />
-            <Button label="Editar" className="p-button-raised p-button-warning p-button-text" onClick={() => props.editar()} disabled={!props.solicitante._id} />
-            <Button label="Excluir" className="p-button-raised p-button-danger p-button-text" onClick={() => props.excluir()} disabled={!props.solicitante._id} />
-
+            <div className='BotoesSoli'>
+                <Button label="Inserir" className="p-button-success" onClick={props.inserir} />
+                <Button label="Editar" className="p-button-warning" onClick={() => props.editar()} disabled={!props.solicitante._id} />
+                <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()} disabled={!props.solicitante._id} />
+            </div>
             <p></p>
 
             <DataTable value={props.solicitantes} paginator responsiveLayout="scroll"
-                paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+                paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink 
+                LastPageLink RowsPerPageDropdown"
                 currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords}"
                 rows={5} rowsPerPageOptions={[5, 10, 50]}
                 emptyMessage="Nenhum Solicitante encontrado."
                 selectionMode="single" selection={props.solicitante}
-                onSelectionChange={e => props.setSolicitante(e.value)} dataKey="_id"
-            >
-                <Column field="_id" header="ID" sortable></Column>
-                <Column field="nome" header="Nome" sortable filter ></Column>
-                <Column field="email" header="Email" sortable filter ></Column>
+                onSelectionChange={e => props.setSolicitante(e.value)} dataKey="_id">
+
+                <Column field="_id" header="ID" sortable align={'center'}></Column>
+                <Column field="nome" header="Nome" sortable filter align={'center'}></Column>
+                <Column field="email" header="E-mail" sortable filter align={'center'}></Column>
             </DataTable>
-
-
-
         </div>
     );
 };

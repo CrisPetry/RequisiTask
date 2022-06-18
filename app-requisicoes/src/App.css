@@ -79,7 +79,43 @@
   margin-left: 59rem;
 }
 
+.BotoesColaborador{
+  justify-content: center !important;
+  margin-top: -53px;
+  margin-left: 48rem;
+}
+
+.BotoesColabForm{
+  justify-content: center !important;
+  margin-top: -58px;
+  margin-left: 59rem;
+}
+
+.BotoesSoli{
+  justify-content: center !important;
+  margin-top: -52px;
+  margin-left: 51rem;
+}
+
+.BotoesSoliForm{
+  justify-content: center !important;
+  margin-top: -58px;
+  margin-left: 59rem;
+}
+
 .cardReqForm{
+  width: 45rem;
+  margin-left:25rem;
+  margin-top:3rem;
+}
+
+.cardSoliForm{
+  width: 45rem;
+  margin-left:25rem;
+  margin-top:3rem;
+}
+
+.cardColabForm{
   width: 45rem;
   margin-left:25rem;
   margin-top:3rem;
@@ -92,6 +128,32 @@
 h4{
   margin-right: 63rem;
   padding-top: 30px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.Colaborador{
+  padding-top: 8px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.Solicitante{
+  padding-top: 8px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.headerColab{
+  padding-top: 8px;
+  margin-bottom: 25px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.headerSoliForm{
+  padding-top: 8px;
+  margin-bottom: 25px;
   font-family: 'Fredoka One', cursive;
   font-size: xx-large;
 }

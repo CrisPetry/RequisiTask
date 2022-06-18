@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
-import { useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 const ColaboradorForm = (props) => {
   const handleInputChange = (event) => {
@@ -14,8 +14,6 @@ const ColaboradorForm = (props) => {
 
   const { register, handleSubmit, setError, formState: { errors } } = useForm();
   const onSubmit = data => {
-    // Validar senha e contra senha. Se diferentes gerar erro na senha. 
-    //console.log("S: "+senha+" CS: "+contraSenha);
     if (props.colaborador.senha !== contraSenha) {
       setError('senha', { type: 'custom', message: 'Senha e contra senha diferentes.' });
     } else {
@@ -27,8 +25,8 @@ const ColaboradorForm = (props) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <div className="card">
-          <h5>Cadastro de colaboradores</h5>
+        <div className="cardColabForm">
+          <h5 className="headerColab">Cadastrar/Editar colaboradores</h5>
           <div className="p-fluid grid formgrid">
 
             <div className="field col-12 md:col-4">
@@ -44,10 +42,10 @@ const ColaboradorForm = (props) => {
             </div>
 
             <div className="field col-12 md:col-4">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">E-mail</label>
               <InputText id="email" defaultValue={props.colaborador.email}
                 {...register("email", {
-                  required: { value: true, message: "O email é obrigatória." }
+                  required: { value: true, message: "O e-mail é obrigatória." }
                 })}
                 onChange={handleInputChange} />
               {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
@@ -77,9 +75,9 @@ const ColaboradorForm = (props) => {
           <p></p>
         </div>
 
-        <div className="container d-flex justify-content-center">
-          <Button label="Salvar" className="p-button-raised p-button-success p-button-text" type="submit" />
-          <Button label="Cancelar" className="p-button-raised p-button-danger p-button-text" onClick={props.cancelar} />
+        <div className="BotoesColabForm">
+          <Button label="Salvar" className="p-button-success" type="submit" />
+          <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
         </div>
       </div>
 

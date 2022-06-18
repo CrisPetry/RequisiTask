@@ -14,7 +14,7 @@ function ColaboradorCon() {
   const toastRef = useRef();
 
   useEffect(() => {
-    onClickAtualizar(); // ao inicializar execula método para atualizar
+    onClickAtualizar(); 
   }, []);
 
   const onClickAtualizar = () => {
@@ -37,7 +37,7 @@ function ColaboradorCon() {
   };
 
   const salvar = () => {
-    if (colaborador._id == null) { // inclusão
+    if (colaborador._id == null) { 
       ColaboradorSrv.incluir(colaborador)
         .then((response) => {
           setEditando(false);
@@ -55,7 +55,7 @@ function ColaboradorCon() {
             life: 4000,
           });
         });
-    } else { // alteração
+    } else { 
       ColaboradorSrv.alterar(colaborador)
         .then((response) => {
           setEditando(false);
@@ -87,11 +87,12 @@ function ColaboradorCon() {
   const excluir = () => {
     confirmDialog({
       message: "Confirma a exclusão?",
-      header: "Confirmação",
-      icon: "pi pi-question",
+      closable:false,
+      icon: "pi pi-trash",
       acceptLabel: "Sim",
       rejectLabel: "Não",
-      acceptClassName: "p-button-danger",
+      rejectClassName: "p-button-danger",
+      acceptClassName: "p-button-success",
       accept: () => excluirConfirm(),
     });
   };

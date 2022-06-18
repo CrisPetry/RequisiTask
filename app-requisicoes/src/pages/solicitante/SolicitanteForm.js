@@ -11,11 +11,8 @@ const SolicitanteForm = (props) => {
     };
 
     const [contraSenha, setContraSenha] = useState();
-
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
     const onSubmit = data => {
-        // Validar senha e contra senha. Se diferentes gerar erro na senha. 
-        //console.log("S: "+senha+" CS: "+contraSenha);
         if (props.solicitante.senha !== contraSenha) {
             setError('senha', { type: 'custom', message: 'Senha e contra senha diferentes.' });
         } else {
@@ -27,10 +24,9 @@ const SolicitanteForm = (props) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <div className="card">
-                    <h5>Cadastro de solicitante</h5>
+                <div className="cardSoliForm">
+                    <h5 className="headerSoliForm">Cadastrar/Editar solicitantes</h5>
                     <div className="p-fluid grid formgrid">
-
                         <div className="field col-12 md:col-4">
                             <label htmlFor="nome">Nome</label>
                             <InputText id="nome" defaultValue={props.solicitante.nome}
@@ -44,7 +40,7 @@ const SolicitanteForm = (props) => {
                         </div>
 
                         <div className="field col-12 md:col-4">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">E-mail</label>
                             <InputText id="email" defaultValue={props.solicitante.email}
                                 {...register("email", {
                                     required: { value: true, message: "o email é obrigatória." }
@@ -72,17 +68,14 @@ const SolicitanteForm = (props) => {
                             <Password id="contraSenha" defaultValue={contraSenha}
                                 onChange={e => setContraSenha(e.target.value)} toggleMask />
                         </div>
-
                     </div>
                     <p></p>
                 </div>
-
-                <div className="container d-flex justify-content-center">
-                    <Button label="Salvar" className="p-button-raised p-button-success p-button-text" type="submit" />
-                    <Button label="Cancelar" className="p-button-raised p-button-danger p-button-text" onClick={props.cancelar} />
+                <div className="BotoesSoliForm">
+                    <Button label="Salvar" className="p-button-success" type="submit" />
+                    <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                 </div>
             </div>
-
         </form>
     );
 };

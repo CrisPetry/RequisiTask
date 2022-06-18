@@ -14,17 +14,12 @@ function SolicitanteCon() {
     const toastRef = useRef();
 
     useEffect(() => {
-        onClickAtualizar(); // ao inicializar execula método para atualizar
+        onClickAtualizar();
     }, []);
 
     const onClickAtualizar = () => {
         SolicitanteSrv.listar().then((response) => {
             setSolicitantes(response.data);
-            // toastRef.current.show({
-            //   severity: "success",
-            //   summary: "Solicitantes Atualizados!",
-            //   life: 3000,
-            // });
         })
             .catch((e) => {
                 console.log("Erro: " + e.message);
@@ -60,7 +55,7 @@ function SolicitanteCon() {
                         life: 4000,
                     });
                 });
-        } else { // alteração
+        } else {
             SolicitanteSrv.alterar(solicitante)
                 .then((response) => {
                     setEditando(false);
@@ -92,11 +87,12 @@ function SolicitanteCon() {
     const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
-            header: "Confirmação",
-            icon: "pi pi-question",
+            closable: false,
+            icon: "pi pi-trash",
             acceptLabel: "Sim",
             rejectLabel: "Não",
-            acceptClassName: "p-button-danger",
+            rejectClassName: "p-button-danger",
+            acceptClassName: "p-button-success",
             accept: () => excluirConfirm(),
         });
     };
