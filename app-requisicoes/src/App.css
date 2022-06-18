@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,91 @@
     transform: rotate(360deg);
   }
 }
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link{
+  margin-left:7.5rem !important;
+}
+
+.p-menubar{
+  background-color: aliceblue !important;
+}
+
+#Botoes{
+  margin-left: 66rem !important;
+  color: white !important;
+  margin-top: -60px;
+}
+
+
+.cardForm{
+  margin-top: 45px;
+  margin-left: 12rem;
+  float: right;
+  border: none;
+}
+
+.BotoesForm{
+  justify-content: center !important;
+  margin-top: 10px;
+  margin-left: 293px;
+}
+
+.BotoesList{
+  justify-content: center !important;
+  margin-top: -48px;
+  margin-left: 66rem;
+}
+
+.BotoesReq{
+  justify-content: center !important;
+  margin-top: -48px;
+  margin-left: 59rem;
+}
+
+.cardReqForm{
+  width: 45rem;
+  margin-left:25rem;
+  margin-top:3rem;
+}
+
+.p-button{
+  margin-left:5px !important;
+}
+
+h4{
+  margin-right: 63rem;
+  padding-top: 30px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.cadastrar{
+  padding-top: 1px;
+  margin-bottom: 23px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.inserir{
+  margin-right: 31rem;
+  padding-top: 40px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+
+
+.p-selectable-row:nth-child(even){
+  background-color: #f8f9fa !important;
+}
+
+.p-selectable-row:nth-child(odd){
+  background-color: aliceblue !important;
+}
+
+.p-datatable .p-column-header-content{
+  display: block !important;
+}
+
+
+

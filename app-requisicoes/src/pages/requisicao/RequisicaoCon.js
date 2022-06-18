@@ -6,6 +6,8 @@ import RequisicaoSrv from "./RequisicaoSrv";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
+
+
 function RequisicaoCon() {
     const [requisicoes, setRequisicoes] = useState([]);
     const initialState = { id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "", prazoAtendimento: "" };
@@ -14,17 +16,12 @@ function RequisicaoCon() {
     const toastRef = useRef();
 
     useEffect(() => {
-        onClickAtualizar(); // ao inicializar execula método para atualizar
+        onClickAtualizar();
     }, []);
 
     const onClickAtualizar = () => {
         RequisicaoSrv.listar().then((response) => {
             setRequisicoes(response.data);
-            // toastRef.current.show({
-            //   severity: "success",
-            //   summary: "Requisições Atualizados!",
-            //   life: 3000,
-            // });
         })
             .catch((e) => {
                 console.log("Erro: " + e.message);
@@ -60,7 +57,7 @@ function RequisicaoCon() {
                         life: 4000,
                     });
                 });
-        } else { // alteração
+        } else {
             RequisicaoSrv.alterar(requisicao)
                 .then((response) => {
                     setEditando(false);
@@ -89,14 +86,17 @@ function RequisicaoCon() {
         setEditando(true);
     };
 
+
+
     const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
-            header: "Confirmação",
-            icon: "pi pi-question",
+            closable:false,
+            icon: "pi pi-trash",
             acceptLabel: "Sim",
             rejectLabel: "Não",
-            acceptClassName: "p-button-danger",
+            rejectClassName: "p-button-danger",
+            acceptClassName: "p-button-success",
             accept: () => excluirConfirm(),
         });
     };
@@ -150,6 +150,8 @@ function RequisicaoCon() {
             </div>
         );
     }
+
+
 
 }
 export default RequisicaoCon;

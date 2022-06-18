@@ -88,11 +88,12 @@ function TipoRequisicaoCon() {
     const excluir = () => {
         confirmDialog({
             message: "Confirma a exclusão?",
-            header: "Confirmação",
-            icon: "pi pi-question",
+            icon: "pi pi-trash",
+            closable: false, 
             acceptLabel: "Sim",
             rejectLabel: "Não",
-            acceptClassName: "p-button-danger",
+            rejectClassName: "p-button-danger",
+            acceptClassName: "p-button-success",
             accept: () => excluirConfirm(),
         });
     };

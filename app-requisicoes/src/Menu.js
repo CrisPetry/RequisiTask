@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Menubar } from 'primereact/menubar';
+import "./App.css";
 
 function Menu() {
   let navigate = useNavigate();
@@ -11,31 +12,48 @@ function Menu() {
       command: () => { navigate("/") }
     },
     {
-      label: 'Colaboradores', icon: 'pi pi-id-card',
-      command: () => { navigate("/colaboradores") }
+      label: 'Usuários', icon: 'pi pi-users',
+      items: [
+        {
+          label: 'Colaboradores', icon: 'pi pi-user',
+          command: () => { navigate("/colaboradores") }
+        },
+        {
+          label: 'Solicitantes', icon: 'pi pi-user-plus',
+          command: () => { navigate("/solicitantes") }
+        },
+      ]
     },
     {
-      label: 'Atividades', icon: 'pi pi-id-card',
-      command: () => { navigate("/atividades") }
+      label: 'Consultas', icon: 'pi pi-fw pi-ticket',
+      items: [
+        {
+          label: 'Status', icon: 'pi pi-chart-bar',
+          command: () => { navigate("/andamentos") }
+        },
+        {
+          label: 'Atividades', icon: 'pi pi-chart-line',
+          command: () => { navigate("/atividades") }
+        },
+      ]
     },
+
     {
-      label: 'Solicitantes', icon: 'pi pi-id-card',
-      command: () => { navigate("/solicitantes") }
+      label: 'Pedidos', icon: 'pi pi-fw pi-file',
+      items: [
+        {
+          label: 'Requisições', icon: 'pi pi-tags',
+          command: () => { navigate("/requisicoes") }
+        },
+        {
+          label: 'Tipos de Requisição', icon: 'pi pi-tag',
+          command: () => { navigate("/tipoRequisicoes") }
+        },
+      ]
     },
+
     {
-      label: 'Andamentos', icon: 'pi pi-id-card',
-      command: () => { navigate("/andamentos") }
-    },
-    {
-      label: 'Tipos de Requisições', icon: 'pi pi-id-card',
-      command: () => { navigate("/tipoRequisicoes") }
-    },
-    {
-      label: 'Requisições', icon: 'pi pi-id-card',
-      command: () => { navigate("/requisicoes") }
-    },
-    {
-      label: 'Sair', icon: 'pi pi-sign-out',
+      label: 'Sair', icon: 'pi pi-sign-out', 
       command: () => {
         sessionStorage.setItem('token', '');
       },
