@@ -54,7 +54,7 @@ const AtividadeForm = (props) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <div className="cardAtividadeForm">
-                    <h5 className="inserir">Cadastrar/Editar atividade</h5>
+                    <h5 className="headerAtividadeForm">Cadastrar/Editar atividade</h5>
                     <div className="p-fluid grid formgrid">
 
                         <div className="field col-12 md:col-4">

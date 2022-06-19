@@ -1,6 +1,6 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
-@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1ODgxMDksImV4cCI6MTY1NTU5MTcwOX0.QMhGAeII2NkBSv-g47Akg1A1ythPGFKwE4r0rftUZEc
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzOWFiOTE3MDk0ZTM0YTNlYzUwNDkiLCJub21lIjoiQ3Jpc3RpYW4iLCJpYXQiOjE2NTU1OTUyNzksImV4cCI6MTY1NTU5ODg3OX0.DEb2SQaxXVmCqaHUiRjqYu4uoL2uYfiifzGtYRyF1wM
 
 # Obter a lista de andamentos
 GET {{apiUrl}}/andamentos

@@ -6,9 +6,15 @@ import AndamentoSrv from "./AndamentoSrv";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
+
+
+
 function AndamentoCon() {
     const [andamentos, setAndamentos] = useState([]);
-    const initialState = { id: null, dataHora: "", titulo: "", descricao: "", colaborador: null, atividade: null };
+    const initialState = {
+        id: null, dataHora: "", titulo: "", descricao: "",
+        atividade: null, colaborador: null
+    };
     const [andamento, setAndamento] = useState(initialState);
     const [editando, setEditando] = useState(false);
     const toastRef = useRef();
@@ -128,8 +134,7 @@ function AndamentoCon() {
                     onClickAtualizar={onClickAtualizar}
                     inserir={inserir}
                     editar={editar}
-                    excluir={excluir}
-                />
+                    excluir={excluir} />
                 <Toast ref={toastRef} />
             </div>
         );
@@ -140,8 +145,7 @@ function AndamentoCon() {
                     andamento={andamento}
                     setAndamento={setAndamento}
                     salvar={salvar}
-                    cancelar={cancelar}
-                />
+                    cancelar={cancelar} />
                 <Toast ref={toastRef} />
             </div>
         );

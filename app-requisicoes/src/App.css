@@ -82,7 +82,7 @@
 .BotoesReq{
   justify-content: center !important;
   margin-top: -51px;
-  margin-left: 69rem;
+  margin-left: 59rem;
 }
 
 .BotoesColaborador{
@@ -213,6 +213,13 @@ h4{
   font-size: xx-large;
 }
 
+.headerAtividadeForm{
+  padding-top: 5px;
+  margin-bottom: 12px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
 .headerRequisicao{
   margin-top: -15px;
 }
@@ -245,6 +252,12 @@ h4{
   font-size: xx-large;
 }
 
+.headerAndamentoForm{
+  margin-bottom: 25px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
 .cadastrar{
   padding-top: 1px;
   margin-bottom: 23px;
@@ -255,6 +268,12 @@ h4{
 .inserir{
   margin-right: 31rem;
   padding-top: 40px;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+}
+
+.adicionar{
+  margin-right: 31rem;
   font-family: 'Fredoka One', cursive;
   font-size: xx-large;
 }
