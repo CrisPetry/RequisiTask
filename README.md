@@ -7,9 +7,11 @@ Ministrada pelo professor Jaqson Dalbosco para o curso de Análise e Desenvolvim
 #Conteúdo do repositório
 
 -> Primeira avaliação (api-livraria & app-livros)
+
 -> Segunda avaliação (api-requisicoes & app-requisicao)
 
 #Integrantes
 
 **Cristian Guilherme Petry**
+
 **Kétlin Petry Beppler**
