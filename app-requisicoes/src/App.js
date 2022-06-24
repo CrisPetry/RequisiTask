@@ -1,4 +1,8 @@
-import "./App.css";
+import './styles/login.css';
+import './styles/1000px.css';
+import './styles/1200px.css';
+import './styles/1600px.css';
+import './styles/1900px.css';
 import "primereact/resources/themes/saga-blue/theme.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "primereact/resources/primereact.min.css";

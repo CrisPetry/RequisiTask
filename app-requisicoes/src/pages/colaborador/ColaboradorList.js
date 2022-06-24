@@ -11,8 +11,8 @@ const ColaboradorList = (props) => {
       <p></p>
 
       <div className='BotoesColaborador'>
-        <Button label="Inserir" className="p-button-success" onClick={props.inserir} />
-        <Button label="Editar" className="p-button-warning" onClick={() => props.editar()} disabled={!props.colaborador._id} />
+        <Button label="Inserir" className="p-button-success" onClick={props.inserir} />&ensp;
+        <Button label="Editar" className="p-button-warning" onClick={() => props.editar()} disabled={!props.colaborador._id} />&ensp;
         <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()} disabled={!props.colaborador._id} />
       </div>
       <p></p>
@@ -25,9 +25,9 @@ const ColaboradorList = (props) => {
         emptyMessage="Nenhum Colaborador encontrado."
         selectionMode="single" selection={props.colaborador}
         onSelectionChange={e => props.setColaborador(e.value)} dataKey="_id">
-        <Column field="_id" header="ID" sortable align={'center'}></Column>
-        <Column field="nome" header="Nome" sortable filter align={'center'}></Column>
-        <Column field="email" header="E-mail" sortable filter align={'center'}></Column>
+        <Column field="_id" header="ID" alignHeader={'center'} sortable align={'center'}></Column>
+        <Column field="nome" header="Nome" alignHeader={'center'} sortable align={'center'}></Column>
+        <Column field="email" header="E-mail" alignHeader={'center'} sortable align={'center'}></Column>
       </DataTable>
     </div>
   );

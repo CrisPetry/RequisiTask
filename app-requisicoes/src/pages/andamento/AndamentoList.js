@@ -10,9 +10,9 @@ const AndamentoList = (props) => {
 
             <p></p>
             <div className='BotoesAndamento'>
-                <Button label="Inserir" className="p-button-success" onClick={props.inserir} />
+                <Button label="Inserir" className="p-button-success" onClick={props.inserir} />&ensp;
                 <Button label="Editar" className="p-button-warning" onClick={() => props.editar()}
-                    disabled={!props.andamento._id} />
+                    disabled={!props.andamento._id} />&ensp;
                 <Button label="Excluir" className="p-button-danger" onClick={() => props.excluir()}
                     disabled={!props.andamento._id} />
             </div>

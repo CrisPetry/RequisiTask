@@ -107,7 +107,7 @@ const AndamentoForm = (props) => {
                 </div>
 
                 <div className="BotoesAndamentoForm">
-                    <Button label="Salvar" className="p-button-success" type="submit" />
+                    <Button label="Salvar" className="p-button-success" type="submit" />&ensp;
                     <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                 </div>
             </div>

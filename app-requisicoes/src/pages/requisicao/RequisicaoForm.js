@@ -135,8 +135,8 @@ const RequisicaoForm = (props) => {
                     <p></p>
                 </div>
 
-                <div className="BotoesReq">
-                    <Button label="Salvar" className="p-button-success" type="submit" />
+                <div className="BotoesRequisicao">
+                    <Button label="Salvar" className="p-button-success" type="submit" />&ensp;
                     <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                 </div>
             </div>

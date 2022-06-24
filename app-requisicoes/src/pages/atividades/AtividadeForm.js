@@ -149,7 +149,7 @@ const AtividadeForm = (props) => {
                 </div>
 
                 <div className="BotoesAtividadeForm">
-                    <Button label="Salvar" className="p-button-success" type="submit" />
+                    <Button label="Salvar" className="p-button-success" type="submit" />&ensp;
                     <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                 </div>
             </div>

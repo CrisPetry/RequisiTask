@@ -2,7 +2,11 @@ import React from "react";
 import { Button } from 'primereact/button';
 import { useForm } from 'react-hook-form';
 import { InputText } from 'primereact/inputtext'
-import "../../App.css";
+import '../../styles/login.css';
+import '../../styles/1000px.css';
+import '../../styles/1200px.css';
+import '../../styles/1600px.css';
+import '../../styles/1900px.css';
 
 const TipoRequisicaoForm = (props) => {
     const handleInputChange = (event) => {
@@ -34,7 +38,7 @@ const TipoRequisicaoForm = (props) => {
                         </div>
                     </div>
                     <div className="BotoesForm">
-                        <Button label="Salvar" className="p-button-success" type="submit" />
+                        <Button label="Salvar" className="p-button-success" type="submit" />&ensp;
                         <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                     </div>
                     <p></p>

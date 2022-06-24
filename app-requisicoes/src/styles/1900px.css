@@ -1,0 +1,241 @@
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 1900px) {
+
+  /* HEADER */
+  .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
+    margin-left: 13rem !important;
+  }
+
+  .p-menubar {
+    background-color: aliceblue !important;
+  }
+
+  /* ------------------------------------------------------------------------------------------------- */
+
+
+  /* BOTOES */
+  .BotoesColaborador {
+    justify-content: center !important;
+    margin-top: -72px;
+    margin-left: 103rem;
+  }
+
+  .BotoesColabForm {
+    justify-content: center !important;
+    margin-top: -58px;
+    margin-left: 69.5rem;
+  }
+
+  .BotoesSoli {
+    justify-content: center !important;
+    margin-top: -72px;
+    margin-left: 103rem;
+  }
+
+  .BotoesSoliForm {
+    justify-content: center !important;
+    margin-top: -58px;
+    margin-left: 69.5rem;
+  }
+
+  .BotoesAndamento {
+    justify-content: center !important;
+    margin-top: -72px;
+    margin-left: 101rem;
+  }
+
+  .BotoesAndamentoForm {
+    justify-content: center !important;
+    margin-top: 10px;
+    margin-left: 70rem;
+  }
+
+  .BotoesAtividade {
+    justify-content: center !important;
+    margin-top: -72px;
+    margin-left: 103.5rem;
+  }
+
+  .BotoesAtividadeForm {
+    justify-content: center !important;
+    margin-top: 10px;
+    margin-left: 70rem;
+  }
+
+  .BotoesReq {
+    justify-content: center !important;
+    margin-top: -72px;
+    margin-left: 102.5rem;
+  }
+
+  .BotoesRequisicao {
+    justify-content: center !important;
+    margin-top: -65px;
+    margin-left: 69.5rem;
+  }
+
+  #Botoes{
+    justify-content: center !important;
+    margin-top: -58px;
+    margin-left: 101.5rem;
+  }
+
+  .BotoesForm{
+    justify-content: center !important;
+    margin-top: 24px;
+    margin-left: 11.5rem;
+  }
+
+
+
+
+  /* ------------------------------------------------------------------------------------------------- */
+
+  /* CARDS */
+  .cardColabForm {
+    width: 45rem;
+    margin-left: 36rem;
+    margin-top: 6rem;
+  }
+
+  .cardSoliForm {
+    width: 45rem;
+    margin-left: 36rem;
+    margin-top: 6rem;
+  }
+
+  .p-column-filter-menu {
+    margin-left: 0 !important;
+  }
+
+  .cardAndamentoForm {
+    width: 45rem;
+    margin-left: 36rem;
+    margin-top: 6rem;
+  }
+
+  .cardAtividadeForm {
+    width: 45rem;
+    margin-left: 36rem;
+    margin-top: 6rem;
+  }
+
+  .cardReqForm {
+    width: 45rem;
+    margin-left: 36rem;
+    margin-top: 6rem;
+  }
+
+  .cardForm{
+    width: 45rem;
+    margin-left: 50rem;
+    margin-top: 9rem;
+  }
+
+  /* ------------------------------------------------------------------------------------------------- */
+
+  /* TITULOS */
+  .Colaborador {
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+    background-color: #ebf4fb;
+    color: rgba(14, 13, 13, 0.699);
+  }
+
+  .headerColab {
+    padding-top: 8px;
+    margin-bottom: 25px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+  }
+
+  .Solicitante {
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+    background-color: #ebf4fb;
+    color: rgba(14, 13, 13, 0.699);
+  }
+
+  .headerSoliForm {
+    padding-top: 8px;
+    margin-bottom: 25px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+  }
+
+  .headerAndamento {
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+    background-color: #ebf4fb;
+    color: rgba(14, 13, 13, 0.699);
+  }
+
+  .headerAndamentoForm {
+    padding-top: 8px;
+    margin-bottom: 25px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+  }
+
+  .headerAtividade {
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+    background-color: #ebf4fb;
+    color: rgba(14, 13, 13, 0.699);
+  }
+
+  .headerAtividadeForm {
+    padding-top: 8px;
+    margin-bottom: 25px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+  }
+
+  .headerRequisicao {
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+    background-color: #ebf4fb;
+    color: rgba(14, 13, 13, 0.699);
+  }
+
+  .inserir {
+    padding-top: 8px;
+    margin-left: -39px;
+    margin-bottom: 25px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+  }
+
+  .TipoRequisicao{
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    font-family: 'Fredoka One', cursive;
+    font-size: xx-large;
+    background-color: #ebf4fb;
+    color: rgba(14, 13, 13, 0.699);
+  }
+
+
+
+
+
+  /* ------------------------------------------------------------------------------------------------- */
+
+}

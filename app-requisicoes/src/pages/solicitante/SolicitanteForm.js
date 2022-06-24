@@ -72,7 +72,7 @@ const SolicitanteForm = (props) => {
                     <p></p>
                 </div>
                 <div className="BotoesSoliForm">
-                    <Button label="Salvar" className="p-button-success" type="submit" />
+                    <Button label="Salvar" className="p-button-success" type="submit" />&ensp;
                     <Button label="Cancelar" className="p-button-danger" onClick={props.cancelar} />
                 </div>
             </div>
