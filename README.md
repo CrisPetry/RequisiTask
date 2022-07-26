@@ -1,5 +1,4 @@
-# TPF
-Tópicos PF
+# RequisiTask
 
 Projeto Desenvolvido para a matéria de Tópicos Especiais de Desenvolvimento de Software I 
 
